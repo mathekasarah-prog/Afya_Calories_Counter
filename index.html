@@ -1,51 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Afya Calories Counter</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-    <h1>Afya Calorie Counter</h1>
-    <p>Track your meals. Understand your calories. Live healthier.</p>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body class="min-h-screen bg-green-50 text-gray-800">
+    <header class="text-center py-8 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-green-700">
+        Afya Calorie Counter
+      </h1>
+      <p class="mt-2 text-gray-600 text-lg">
+        Track your meals. Understand your calories. Live healthier.
+      </p>
     </header>
 
-    <main>
-        <section>
-            <h2>Add Food</h2>
-            <form id="food-form">
-                <label for="food-name">Food Name</label>
-                <input type="text" id="food-name" name="food-name" placeholder="e.g Apple" required>
+    <main class="max-w-3xl mx-auto px-4 pb-10">
+      <section class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold text-green-700 mb-5">Add Food</h2>
 
-                <label for="calories">Calories</label>
-                <input type="number" id="calories" name="calories" placeholder="e.g 700" min="0" required>
+        <form id="food-form" class="space-y-4">
+          <label for="food-name" class="block font-semibold text-gray-700"
+            >Food Name</label>
+          <input
+                type="text"
+                id="food-name"
+                name="food-name"
+                placeholder="e.g Apple"
+                required
+            class="w-full mt-1 px-4 py-3 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-green-500"/>
 
-                <button type="submit">Add Food</button>
-            </form>
-        </section>
+          <label
+                for="calories"
+                class="w-full mt-1 px-4 py-3 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                >Calories</label>
+          <input
+                type="number"
+                id="calories"
+                name="calories"
+                placeholder="e.g 700"
+                min="0"
+                required/>
 
-        <section>
-            <h2>Today's Food</h2>
+          <button
+            type="submit"
+            class="w-full bg-green-600 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transitionduration-300">
+            Add Food
+          </button>
+        </form>
+      </section>
 
-            <ul id="food-list">
+      <section class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <h2 class="text-2xl font-bold text-green-700 mb-5">Today's Food</h2>
 
-            </ul>
-        </section>
+        <ul id="food-list" class="space-y-3">
 
-        <section>
-            <h2>Daily Summary</h2>
-            <p>Total Calories:
-                <span id="total-calories">0</span> kcal
-            </p>
-            <button id="reset-btn" type="button">
-                Reset Day
-            </button>
-        </section>
+
+        </ul>
+      </section>
+
+      <section>
+        <h2>Daily Summary</h2>
+        <p>Total Calories: <span id="total-calories">0</span> kcal</p>
+        <button id="reset-btn" type="button" class=" mt-5 bg-white text-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transitionduration-300">Reset Day</button>
+      </section>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
