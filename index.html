@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afya Calories Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+    <h1>Afya Calorie Counter</h1>
+    <p>Track your meals. Understand your calories. Live healthier.</p>
+
+    </header>
+
+    <main>
+        <section>
+            <h2>Add Food</h2>
+            <form id="food-form">
+                <label for="food-name">Food Name</label>
+                <input type="text" id="food-name" name="food-name" placeholder="e.g Apple" required>
+
+                <label for="calories">Calories</label>
+                <input type="number" id="calories" name="calories" placeholder="e.g 700" min="0" required>
+
+                <button type="submit">Add Food</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Today's Food</h2>
+
+            <ul id="food-list">
+
+            </ul>
+        </section>
+
+        <section>
+            <h2>Daily Summary</h2>
+            <p>Total Calories:
+                <span id="total-calories">0</span> kcal
+            </p>
+            <button id="reset-btn" type="button">
+                Reset Day
+            </button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
