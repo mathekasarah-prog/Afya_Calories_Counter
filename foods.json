@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Banana",
+        "calories": 105
+    },
+    {
+        "name": "Apple",
+        "calories": 95
+    },
+    {
+        "name": "Eggs",
+        "calories": 140
+    },
+    {
+        "name": "Rice",
+        "calories": 200
+    },
+    {
+        "name": "Chicken",
+        "calories": 250
+    },
+    {
+        "name": "Avocado",
+        "calories": 160
+    },
+    {
+        "name": "Chapati",
+        "calories": 120
+    },
+    {
+        "name": "Ugali",
+        "calories": 220
+    }
+]
