@@ -137,3 +137,7 @@ async function fetchFoodData(foodName) {
         return null;
     }
 }
+
+function saveFoods() {
+    localStorage.setItem("foods", JSON.stringify(foods));
+}
