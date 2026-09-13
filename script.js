@@ -4,6 +4,8 @@ const caloriesInput = document.querySelector("#calories");
 const foodList = document.querySelector("#food-list");
 const totalCalories = document.querySelector("#total-calories");
 const resetButton = document.querySelector("#reset-btn");
+const lookupButton = document.querySelector("#lookup-btn");
+const lookupMessage = document.querySelector("#lookup-message");
 
 
 let foods = [];
@@ -138,6 +140,3 @@ async function fetchFoodData(foodName) {
     }
 }
 
-function saveFoods() {
-    localStorage.setItem("foods", JSON.stringify(foods));
-}

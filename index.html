@@ -36,21 +36,26 @@
 
           <label
                 for="calories"
-                class="w-full mt-1 px-4 py-3 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="block font-semibold text-gray-700"
                 >Calories</label>
-          <input
+
+          <div class="flex gap-2"> 
+          <input class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-green-500"
                 type="number"
                 id="calories"
                 name="calories"
-                placeholder="e.g 700"
-                min="0"
-                required/>
+                placeholder="e.g 105"
+                min="0">
 
-          <button
-            type="submit"
-            class="w-full bg-green-600 text-white font-semibold py-3 rounded-lg hover:bg-green-700 transitionduration-300">
-            Add Food
+          <button id="lookup-btn"
+            type="button"
+            class="bg-green-500 text-white px-4 py-3 rounded-lg
+               hover:bg-green-600 transition duration-300">
+            Find Calories
           </button>
+          </div> 
+          <p id="lookup-message" class="text-sm text-gray-500"></p>
         </form>
       </section>
 
