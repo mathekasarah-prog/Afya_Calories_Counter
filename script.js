@@ -32,7 +32,7 @@ function addFood(foodName, calories) {
     calculateTotalCalories();
 }
 
-foodForm.addEventListener("submit", async function(event) {
+foodForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
     const foodName = foodNameInput.value.trim();
@@ -58,13 +58,27 @@ foodForm.addEventListener("submit", async function(event) {
 function displayFoods() {
     foodList.innerHTML = "";
 
+    if (foods.length === 0) {
+        const emptyMessage = document.createElement("li");
+
+        emptyMessage.textContent =
+            "No foods added yet. Start by adding your first meal.";
+
+        emptyMessage.className =
+            "text-center text-gray-500 py-6";
+
+        foodList.appendChild(emptyMessage);
+
+        return;
+    }
+
     foods.forEach(function(food, index) {
         const listItem = document.createElement("li");
 
         listItem.className =
             "flex items-center justify-between bg-gray-50 p-4 rounded-lg border";
 
-            const foodInfo = document.createElement("span");
+        const foodInfo = document.createElement("span");
 
         foodInfo.textContent =
             `${food.name} - ${food.calories} kcal`;
