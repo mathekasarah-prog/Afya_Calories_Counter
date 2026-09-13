@@ -36,18 +36,24 @@ foodForm.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const foodName = foodNameInput.value.trim();
-    
-    const food = await fetchFoodData(foodName);
+    const calories = Number(caloriesInput.value);
 
-    if (!food) {
-        alert("Sorry, that food is not in our calorie database.");
+    if (foodName === "") {
+        alert("Please enter a food name.");
         return;
     }
 
-    addFood(food.name, food.calories);
+    if (calories <= 0) {
+        alert("Please enter a valid calorie amount.");
+        return;
+    }
+
+    addFood(foodName, calories);
 
     foodForm.reset();
+    lookupMessage.textContent = "";
 });
+    
 
 function displayFoods() {
     foodList.innerHTML = "";
@@ -139,4 +145,24 @@ async function fetchFoodData(foodName) {
         return null;
     }
 }
+
+lookupButton.addEventListener("click", async function() {
+    const foodName = foodNameInput.value.trim();
+
+    if (foodName === "") {
+        lookupMessage.textContent = "Please enter a food name first.";
+        return;
+    }
+
+    const food = await fetchFoodData(foodName);
+
+    if (food) {
+        caloriesInput.value = food.calories;
+        lookupMessage.textContent =
+            `${food.name} contains approximately ${food.calories} kcal.`;
+    } else {
+        lookupMessage.textContent =
+            "Food not found. Please enter the calories manually.";
+    }
+});
 

@@ -33,13 +33,13 @@
                 placeholder="e.g Rice"
                 required
             class="w-full mt-1 px-4 py-3 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus-ring-green-500"/>
-
+          <div>
           <label
                 for="calories"
                 class="block font-semibold text-gray-700"
                 >Calories</label>
 
-          <div class="flex gap-2"> 
+          <div class="flex gap-2,mt-1" > 
           <input class="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg
            focus:outline-none focus:ring-2 focus:ring-green-500"
                 type="number"
@@ -56,6 +56,14 @@
           </button>
           </div> 
           <p id="lookup-message" class="text-sm text-gray-500"></p>
+          </div>
+          <button
+              type="submit"
+              class="w-full bg-green-600 text-white font-semibold py-3
+                           rounded-lg hover:bg-green-700 transition duration-300"
+            >
+              Add Food
+          </button>
         </form>
       </section>
 
